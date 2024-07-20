@@ -295,33 +295,33 @@
 
                                 <div class="mb-3">
                                     <label for="" class="form-label">Upload medical report</label>
-                                    <input id="uploadFile1" type="file" class="form-control d-none">
+                                    <input id="uploadFile1" type="file" class="form-control file-input d-none">
                                     <a type="button" onclick="$('#uploadFile1').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="" class="form-label">Upload income certificate</label>
-                                    <input id="uploadFile2" type="file" class="form-control d-none">
+                                    <input id="uploadFile2" type="file" class="form-control file-input d-none">
                                     <a type="button" onclick="$('#uploadFile2').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Upload identification document</label>
-                                    <input id="uploadFile3" type="file" class="form-control d-none">
+                                    <input id="uploadFile3" type="file" class="form-control file-input d-none">
                                     <a type="button" onclick="$('#uploadFile3').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Upload photograph of the patient</label>
-                                    <input id="uploadFile4" type="file" class="form-control d-none">
+                                    <input id="uploadFile4" type="file" class="form-control file-input d-none">
                                     <a type="button" onclick="$('#uploadFile4').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Photo of the patient with his/her family standing in front of the house</label>
-                                    <input id="uploadFile5" type="file" class="form-control d-none">
+                                    <input id="uploadFile5" type="file" class="form-control file-input d-none">
                                     <a type="button" onclick="$('#uploadFile5').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Upload recommendation letter</label>
-                                    <input id="uploadFile6" type="file" class="form-control d-none">
+                                    <input id="uploadFile6" type="file" class="form-control file-input d-none">
                                     <a type="button" onclick="$('#uploadFile6').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
                                 </div>
                               
@@ -500,6 +500,18 @@
     <script src="assets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript" src="assets/js/simple-notify.min.js"></script>
     <script>
+
+        $('.file-input').change(function(){
+            let value=$(this).val();
+            if(value!=''){
+                $(this).next().addClass('border-success border-2');
+                $(this).prev().append('&nbsp;<i class="fa fa-check text-success fs-6"></i>');
+                
+            }else{
+                $(this).next().removeClass('border-success border-2');
+                $(this).prev().children('i').remove();
+            }
+        });
 
         $('#country').change(function () {
             var selectedVal = $('#country option:selected').attr('value');
