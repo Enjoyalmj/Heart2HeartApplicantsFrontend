@@ -43,12 +43,7 @@
                 </button>
                 <div class="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
-                        <!-- <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="index.html">Home</a>
-                        </li> -->
-                        <li class="nav-item active">
-                            <a class="nav-link " aria-current="page" href="#register" target="_blank">Register</a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page" href="https://heart2heart.astervolunteers.com/#heart-walk" target="_blank">Heart to Heart Cares</a>
                         </li>
@@ -198,212 +193,20 @@
         <div class="container-fluid heart-content px-md-5 px-2 pb- pt-md-4 pt-3">
             <div class="pattern">
                
-                <div class="pattern-1">
-                    <svg  style="width: 100%;" width="416" height="461" viewBox="0 0 416 461" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M-14 236.597H220.545L232.492 303.237L242.039 181.071L252.803 243.064L260.268 269.743L276.697 4.30615L297.009 456.846L311.338 179.212L328.067 237.527H411.795" stroke="white" stroke-width="6.65" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                        
-                </div>
+                
             </div>
 
         <div class="container">
-            <div class="row d-flex mx-auto justify-content-center py-5" id="register">
-                <div class="col-lg-5 col-12 pb-5">
+            <div class="row d-flex mx-auto justify-content-center py-5" id="thankyou">
+                <div class="col-lg-3 col-12 pb-5">
                     <div class="form-style">
-                        <form asp-action="CampaignRegisteration" autocomplete="off" enctype="multipart/form-data" id="myform" onsubmit="return jQueryAjaxPost(this);">
-                            <input type="hidden" asp-for="Campaignid" />
-                            <div class="col-12">
-                                <h3 class="text-bold text-center">
-                                    Please fill in the details of <br> the child below
+                    <form action="" class="">
+                        <div class="col-12 mx-auto">
+                            <h3>Thank you for <br>
+                                registering
                                 </h3>
-                            </div>
-                            <div class="col-12 " id="ifNoForm">
-
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Name of the patient</label>
-                                    <input type="text" class="form-control" id="" asp-for="NameOfPatient" placeholder="Name" aria-describedby="Name">
-                                    <span asp-validation-for="NameOfPatient" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Age</label>
-                                    <input type="text" class="form-control" id="" asp-for="age" placeholder="Age" aria-describedby="age">
-                                    <span asp-validation-for="age" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Name of the Person / NGO uploading the document</label>
-                                    <input type="text" class="form-control" id="" asp-for="NameOfPersonNGO" placeholder="" aria-describedby="Name">
-                                    <span asp-validation-for="NameOfPersonNGO" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="text" class="form-label">Mobile Number</label>
-                                        <span asp-validation-for="CountryCode" class="text-danger"></span>
-                                        <div class="input-group">
-                                            <!-- @Html.DropDownListFor(x => Model.CountryCode, new SelectList(Model.CountryCodes, "CountryCodes", "CountryCodes"),"Select", htmlAttributes: new { @class = "form-control",@id = "countrycode" }) -->
-                                            <select class="form-select valid" data-val="true" data-val-required="*" id="countrycode" name="CountryCode" data-gtm-form-interact-field-id="0" aria-describedby="countrycode-error" aria-invalid="false"><option value="">Code</option>
-                                                <option value="90">90</option>
-                                                <option value="91">91</option>
-                                                <option value="92">92</option>
-                                                <option value="93">93</option>
-                                                <option value="94">94</option>
-                                                <option value="95">95</option>
-                                            </select>
-                                            <input type="number" asp-for="Mobilenumber" class="form-control w-auto" aria-label="Text input with dropdown button" placeholder="Enter Mobile No" id="MobileNo">
-                                        </div>
-                                        <span asp-validation-for="Mobilenumber" class="text-danger"></span>
-                                  
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Email Id</label>
-                                    <input type="email" class="form-control" id="" asp-for="EmailId" aria-describedby="" placeholder="example@gmail.com">
-                                    <span asp-validation-for="EmailId" class="text-danger"></span>
-                                </div> 
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Country </label>
-                                    <!-- @Html.DropDownListFor(x => Model.MobileCountryId, new SelectList(Model.CountryList, "CountryId", "CountryName"),"Select Country", htmlAttributes: new { @class = "form-select",@id = "country"}) -->
-                                     <select name="" id="country" class="form-select">
-                                        <option value="">Select Country</option>
-                                        <option value="">India</option>
-                                        <option value="">Sri lanka</option>
-                                        <option value="">UAE</option>
-                                     </select>
-                                    <span asp-validation-for="MobileCountryId" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="" class="form-label">State</label>
-                                    <!-- @Html.DropDownListFor(x => Model.MobileCountryId, new SelectList(Model.CountryList, "CountryId", "CountryName"),"Select Country", htmlAttributes: new { @class = "form-select",@id = "country"}) -->
-                                     <select name="" id="state" class="form-select">
-                                        <option value="">Select State</option>
-                                        <option value="">Kerala</option>
-                                        <option value="">Tamil Nadu</option>
-                                        <option value="">Karnataka</option>
-                                     </select>
-                                    <span asp-validation-for="MobileCountryId" class="text-danger"></span>
-                                </div>
-                              <div class="mb-3">
-                                    <label for="" class="form-label">City</label>
-                                    <!-- @Html.DropDownListFor(x => Model.CityId, new SelectList(Model.CityList, "CityId", "CityName"),"Select City", htmlAttributes: new { @class = "form-select",@id = "citynames",@required=true }) -->
-                                    <select name="" id="citynames" class="form-select">
-                                        <option value="">Select City</option>
-                                        <option value="">Ernakulam</option>
-                                        <option value="">Kannur</option>
-                                        <option value="">Kozhikode</option>
-                                     </select>
-                                    <span asp-validation-for="CityId" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Upload medical report</label>
-                                    <input id="uploadFile1" type="file" class="form-control file-input d-none">
-                                    <a type="button" onclick="$('#uploadFile1').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Upload income certificate</label>
-                                    <input id="uploadFile2" type="file" class="form-control file-input d-none">
-                                    <a type="button" onclick="$('#uploadFile2').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Upload identification document</label>
-                                    <input id="uploadFile3" type="file" class="form-control file-input d-none">
-                                    <a type="button" onclick="$('#uploadFile3').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Upload photograph of the patient</label>
-                                    <input id="uploadFile4" type="file" class="form-control file-input d-none">
-                                    <a type="button" onclick="$('#uploadFile4').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Photo of the patient with his/her family standing in front of the house</label>
-                                    <input id="uploadFile5" type="file" class="form-control file-input d-none">
-                                    <a type="button" onclick="$('#uploadFile5').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Upload recommendation letter</label>
-                                    <input id="uploadFile6" type="file" class="form-control file-input d-none">
-                                    <a type="button" onclick="$('#uploadFile6').click()" class="btn btn-outline-secondary upload-btn w-100 rounded-0"> <img src="assets/images/icons/upload.svg" alt=""></a>
-                                </div>
-                              
-                               
-                                <div class="mb-3 text-center">
-                                    <button type="submit" onclick="window.location='thankyou.html#thankyou'" class="btn btn-lg btn-primary button-style-a px-4 py-2" >Submit</button>
-                                    <!-- <button type="button" class="btn btn-primary">Submit</button> -->
-                                </div>
-                                   <!-- <div class="mb-3">
-                                    <div class="form-group ">
-                                        <span asp-validation-for="CountryCode" class="text-danger"></span>
-                                        <label for="text">Mobile Code</label>
-                                        <label for="text" class="px-lg-5 px-0">Mobile number</label>
-                                        <div class="input-group mb-3">
-                                            @Html.DropDownListFor(x => Model.CountryCode, new SelectList(Model.CountryCodes, "CountryCodes", "CountryCodes"),"Select", htmlAttributes: new { @class = "form-control",@id = "countrycode" })
-                                            <input type="number" asp-for="Mobilenumber" class="form-control w-auto" aria-label="Text input with dropdown button" placeholder="Enter Mobile No" id="MobileNo">
-                                        </div>
-                                        <span asp-validation-for="Mobilenumber" class="text-danger"></span>
-                                    </div>
-                                  
-                                </div>
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Email Id</label>
-                                    <input type="email" class="form-control" id="" asp-for="EmailId" aria-describedby="" placeholder="example@gmail.com">
-                                    <span asp-validation-for="EmailId" class="text-danger"></span>
-                                </div> -->
-                               
-                            </div>
-                            <!-- <div class="col-12 " id="ifYesForm">
-
-                            <div class="mb-3">
-                            <label for="" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="" aria-describedby="Name">
-                            </div>
-                            <div class="mb-3">
-                            <label for="" class="form-label">Registered  Mobile number</label>
-                            <input type="text" class="form-control" id="" aria-describedby="+91">
-                            </div>
-                            <div class="mb-3">
-                            <label for="" class="form-label">Email Id</label>
-                            <input type="email" class="form-control" id="" aria-describedby="" placeholder="example@gmail.com">
-                            </div>
-                            <div class="mb-3">
-                            <label for="" class="form-label">City Name</label>
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                            </select>
-                            </div>
-                            <div class="mb-3">
-                            <label for="" class="form-label">Unit Name</label>
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                            </select>
-                            </div>
-                            <div class="mb-3">
-                            <div class="form-check type1">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                            Agree to <a href="">terms and conditions</a>
-                            </label>
-                            </div>
-                            </div>
-                            <div class="mb-3">
-                            <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="2">
-                            <label class="form-check-label" for="2">
-                            Do you want to become an Aster Volunteer and receive updates regarding our upcoming activities?</a>
-                            </label>
-                            </div>
-                            </div>
-                            <div class="mb-3 text-center">
-                            <a class="btn btn-primary button-style-a" href="thankyou.html#thankyou">Submit</a>
-                                <button type="button" class="btn btn-primary">Submit</button> 
-                            </div>
-                            </div> -->
-                        </form>
+                        </div>
+                    </form>
                     </div>
                 </div>
             </div>
